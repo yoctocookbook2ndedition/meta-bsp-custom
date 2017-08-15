@@ -1,5 +1,7 @@
 This README file contains information on the contents of the
-bsp-custom layer.
+bsp-custom layer as introduced in the "Creating a custom BSP layer" on the
+"Embedded Linux Projects Using Yocto Project Cookbook" 2nd edition published
+by Packt Publishing.
 
 Please see the corresponding sections below for details.
 
@@ -9,26 +11,16 @@ Dependencies
 
 This layer depends on:
 
-  URI: git://git.openembedded.org/bitbake
-  branch: master
-
-  URI: git://git.openembedded.org/openembedded-core
-  layers: meta
-  branch: master
-
-  URI: git://git.yoctoproject.org/xxxx
-  layers: xxxx
-  branch: master
+  URI: git://git.yoctoproject.org/meta-freescale
+  branch: rocko
 
 
 Patches
 =======
 
-Please submit any patches against the bsp-custom layer to the
-xxxx mailing list (xxxx@zzzz.org) and cc: the maintainer:
-
-Maintainer: XXX YYYYYY <xxx.yyyyyy@zzzzz.com>
-
+Please submit any patches against the bsp-custom layer to Packt Publishing
+via http://www.packtpub.com/submit-errata, or to the author Alex Gonzalez at
+alex<at>lindusembedded.com
 
 Table of Contents
 =================
@@ -40,8 +32,6 @@ Table of Contents
 I. Adding the bsp-custom layer to your build
 =================================================
 
---- replace with specific instructions for the bsp-custom layer ---
-
 In order to use this layer, you need to make the build system aware of
 it.
 
@@ -50,15 +40,28 @@ yocto build tree, you can add it to the build system by adding the
 location of the bsp-custom layer to bblayers.conf, along with any
 other layers needed. e.g.:
 
-  BBLAYERS ?= " \
-    /path/to/yocto/meta \
-    /path/to/yocto/meta-poky \
-    /path/to/yocto/meta-yocto-bsp \
-    /path/to/yocto/meta-bsp-custom \
-    "
-
+BBLAYERS = " \
+  ${BSPDIR}/sources/poky/meta \
+  ${BSPDIR}/sources/poky/meta-poky \
+  ${BSPDIR}/sources/meta-openembedded/meta-oe \
+  ${BSPDIR}/sources/meta-openembedded/meta-multimedia \
+  ${BSPDIR}/sources/meta-freescale \
+  ${BSPDIR}/sources/meta-freescale-3rdparty \
+  ${BSPDIR}/sources/meta-freescale-distro \
+  ${BSPDIR}/sources/meta-bsp-custom \
+"
 
 II. Misc
 ========
 
---- replace with specific information about the bsp-custom layer ---
+This layer should be used in conjuntion with the "Embedded Linux Projects
+Using Yocto Project Cookbook" 2nd edition  published by Packt Publising.
+
+The commits are named with the chapter and recipe number they belong to:
+
+CH_N: Recipe title
+
+where,
+
+CH is the chapter number
+N is the recipe number according to the list below.
