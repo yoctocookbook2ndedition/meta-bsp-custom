@@ -1,4 +1,10 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${BP}:"
 
-SRC_URI_append = " file://0001-01_02-Add-a-custom-device-tree-and-configuration.patch"
+WANDBOARD_GITHUB_MIRROR = "git://github.com/yoctocookbook2ndedition/linux.git"
+SRCBRANCH = "4.1-2.0.x-imx-dev"
+SRCREV = "${AUTOREV}"
+SRC_URI = "${WANDBOARD_GITHUB_MIRROR};protocol=https;branch=${SRCBRANCH} \
+           file://defconfig \
+"
+
 COMPATIBLE_MACHINE = "(wandboard|wandboard-custom)"
